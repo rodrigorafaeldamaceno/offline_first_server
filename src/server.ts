@@ -1,9 +1,12 @@
 import express, { Request, Response } from "express";
+import routes from "./routes/routes";
+import "./database/database";
+
 
 const app = express();
 
-app.get("/", async (request: Request, response: Response) => {
-  return response.json({ status: "online" });
-});
+
+app.use(express.json());
+app.use(routes);
 
 app.listen(3333);
