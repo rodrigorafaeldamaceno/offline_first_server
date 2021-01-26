@@ -6,8 +6,13 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const CategoryModel_1 = __importDefault(require("../models/CategoryModel"));
 exports.default = {
     async index(req, res) {
-        const categories = await CategoryModel_1.default.find();
-        return res.json(categories);
+        try {
+            const categories = await CategoryModel_1.default.find();
+            return res.json(categories);
+        }
+        catch (error) {
+            console.log(error);
+        }
     },
     async store(req, res) {
         const { name, id } = req.body;

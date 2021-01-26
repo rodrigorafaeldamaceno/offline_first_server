@@ -3,9 +3,13 @@ import CategoryModel from "../models/CategoryModel";
 
 export default {
   async index(req: Request, res: Response) {
-    const categories = await CategoryModel.find();
+    try {
+      const categories = await CategoryModel.find();
 
-    return res.json(categories);
+      return res.json(categories);
+    } catch (error) {
+      console.log(error);
+    }
   },
   async store(req: Request, res: Response) {
     const { name, id } = req.body;
