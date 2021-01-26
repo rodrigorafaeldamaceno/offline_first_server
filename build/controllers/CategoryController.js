@@ -12,6 +12,7 @@ exports.default = {
         }
         catch (error) {
             console.log(error);
+            return res.status(500).json({ error: "internal server error" });
         }
     },
     async store(req, res) {

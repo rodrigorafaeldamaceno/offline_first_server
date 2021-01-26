@@ -9,6 +9,7 @@ export default {
       return res.json(categories);
     } catch (error) {
       console.log(error);
+      return res.status(500).json({ error: "internal server error" });
     }
   },
   async store(req: Request, res: Response) {
