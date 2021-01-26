@@ -5,9 +5,8 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 require("dotenv").config();
 const mongoose_1 = __importDefault(require("mongoose"));
-const mongoAtlas = `mongodb+srv://${process.env.DATABASE_USERNAME}:${process.env.DATABASE_PASSWORD}@analyticsapp.xsvmz.gcp.mongodb.net/${process.env.DATABASE_NAME}?retryWrites=true&w=majority`;
-const mongoLocal = `mongodb://${process.env.HOST}/${process.env.DATABASE}`;
-mongoose_1.default.connect(mongoLocal, {
+const mongoAtlas = `mongodb+srv://${process.env.DATABASE_USERNAME}:${process.env.DATABASE_PASSWORD}@tindevcluster.gxzea.mongodb.net/${process.env.DATABASE_NAME}?retryWrites=true&w=majority`;
+mongoose_1.default.connect(mongoAtlas, {
     useCreateIndex: true,
     useNewUrlParser: true,
     useUnifiedTopology: true,
